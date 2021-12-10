@@ -6,6 +6,6 @@ import (
 	span "github.com/tukangremot/go-sentry/src/span"
 )
 
-func StartEcho(context echo.Context) *sentry.Span {
+func Start(context echo.Context) *sentry.Span {
 	return span.Start(context.Request().Context(), sentry.TransactionName(context.Request().URL.Path))
 }
